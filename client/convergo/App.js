@@ -12,6 +12,7 @@ import MarketingScreen from './screens/MarketingScreen'
 import ActivityScreen from './screens/ActivityScreen'
 import SideBar from './screens/SideBar'
 import FundraiserScreen from './screens/Fundraiser'
+import FundForm from './screens/FundForm';
 
 
 const AdminDrawer = createDrawerNavigator({
@@ -55,6 +56,7 @@ const MainCon = createStackNavigator(
     Activity : { screen : ActivityScreen },
     Fundraiser : { screen : FundraiserScreen },
     Activity : { screen : ActivityScreen },
+    FundForm : { screen : FundForm }
   },
   {
     initialRouteName : 'Home',
