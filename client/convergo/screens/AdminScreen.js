@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 
-import { Container, Header, Content, Card, CardItem, Text, Icon, Button,Right } from 'native-base';
+import { Container, Header, Content, Card, CardItem, Text, Icon, Right, Title, Button } from 'native-base'
 
-import { View, StyleSheet } from 'react-native'
+import { StyleSheet } from 'react-native'
 
-export default class HomeScreen extends Component{
+
+
+export default class AdminScreen extends Component{
 
     static navigationOptions = {
         header: null,
@@ -15,41 +17,31 @@ export default class HomeScreen extends Component{
 
         return (
 
+            <Container>
+            <Content>
 
 
-    <Container>
-        <Header />
-        <Content>
 
-           <Card>
-            <Button bordered full
-             onPress={ ()=> this.props.navigation.navigate( 'Admin' ) } >
-            <Text>Administrator</Text>
-            </Button>
-           </Card>
-
-
-           <Card>
+            <Card>
             <Button bordered full
              onPress={ ()=> this.props.navigation.navigate( 'Marketing' ) } >
-            <Text>Marketing</Text>
+            <Text>Primary</Text>
             </Button>
            </Card>
 
            <Card>
             <Button bordered full
              onPress={ ()=> this.props.navigation.navigate( 'Finance' ) } >
-            <Text>Finance</Text>
+            <Text>Primary</Text>
             </Button>
            </Card>
 
 
 
 
-        </Content>
-      </Container>
 
-
+            </Content>
+        </Container>
 
 
         )

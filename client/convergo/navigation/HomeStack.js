@@ -1,9 +1,9 @@
-
-
+import React from 'react';
+import Colors from '../constants/Colors';
 import { createStackNavigator } from 'react-navigation'
-import TabBarIcon from '../components/TabBarIcon';
+import HomeScreen from '../screens/HomeScreen';
 
-
+import { Ionicons } from '@expo/vector-icons'
 
 
 
@@ -14,10 +14,15 @@ const HomeStack = createStackNavigator({
   HomeStack.navigationOptions = {
     tabBarLabel: 'Home',
     tabBarIcon: ({ focused }) => (
-      <TabBarIcon
-        focused={focused}
+
+      <Ionicons
         name='md-information-circle'
+        size={26}
+        style={{ marginBottom: -3 }}
+        color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
       />
+
     ),
   };
-  
+
+export default HomeStack;
