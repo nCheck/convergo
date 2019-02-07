@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import { Container, Header, Content, Card, CardItem, Text, Icon, Right, Title, Button } from 'native-base'
+import { Container, Header, Content, Card, CardItem, Text, Icon, Right, Title, Button, Image, View } from 'native-base'
 
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Dimensions } from 'react-native'
 
+let {height, width} = Dimensions.get('window');
 
-
-export default class AdminScreen extends Component{
+class AdminScreen extends Component<{}>{
 
     static navigationOptions = {
         header: null,
@@ -15,27 +15,26 @@ export default class AdminScreen extends Component{
 
     render () {
 
+        
         return (
 
+
+  
+
+
+
             <Container>
-            <Content>
+
+                <Content>
+                    <Title>
+                        Hello
+                    </Title>
+                </Content>
+
+            </Container>
 
 
 
-            <Card>
-            <Text>This is admin page</Text>
-           </Card>
-
-           <Card>
-           <Text>This is admin page</Text>
-           </Card>
-
-
-
-
-
-            </Content>
-        </Container>
 
 
         )
@@ -50,6 +49,7 @@ export default class AdminScreen extends Component{
 
 }
 
+export default AdminScreen;
 
 const styles = StyleSheet.create({
     container: {
@@ -58,4 +58,10 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    backgroundImage: {
+        flex: 1,
+        backgroundColor:'transparent',
+        justifyContent: 'center',
+        alignItems: 'center',
+       }
   });

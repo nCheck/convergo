@@ -1,5 +1,5 @@
 import React from "react";
-import { AppRegistry, Image, StatusBar } from "react-native";
+import { AppRegistry, Image, StatusBar, StyleSheet } from "react-native";
 import { Container, Content, Text, List, ListItem } from "native-base";
 const routes = ["Setting", "Finance"];
 
@@ -18,7 +18,10 @@ export default class SideBar extends React.Component {
                 <ListItem
                   button
                   onPress={() => this.props.navigation.navigate(data)}>
-                  <Text>{data}</Text>
+
+                  <Text
+                  style = { styles.button }
+                  >{data}</Text>
                 </ListItem>
               );
             }}
@@ -28,3 +31,15 @@ export default class SideBar extends React.Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  button : {
+      padding : 30
+  }
+});

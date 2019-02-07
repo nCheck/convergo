@@ -15,6 +15,7 @@ import FundraiserScreen from './screens/Fundraiser'
 import FundForm from './screens/FundForm';
 import DoctorScreen from './screens/DoctorScreen';
 import DoctorForm from './screens/DoctorForm';
+import ActivityForm from './screens/ActivityForm';
 
 
 const AdminDrawer = createDrawerNavigator({
@@ -74,7 +75,8 @@ const MainCon = createStackNavigator(
     Activity : { screen : ActivityScreen },
     FundForm : { screen : FundForm },
     Doctor : { screen : DoctorScreen },
-    DoctorForm : { screen : DoctorForm }
+    DoctorForm : { screen : DoctorForm },
+    ActivityForm : { screen : ActivityForm }
   },
   {
     initialRouteName : 'Home',
@@ -98,7 +100,7 @@ const MainCon = createStackNavigator(
 
 const AppNav = createAppContainer(MainCon)
 
-export default class App extends React.Component {
+export default class App extends React.Component<{}> {
 
   constructor(props){
     super(props);

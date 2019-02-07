@@ -31,6 +31,11 @@ export default styles = StyleSheet.create({
     },
     menuItem : {
         paddingTop : 10
+    },
+    button : {
+        marginTop : 80,
+        padding : 40
+        
     }
 });
 
