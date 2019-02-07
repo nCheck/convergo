@@ -87,7 +87,7 @@ const MainCon = createStackNavigator(
 
       return {
         headerLeft:(
-            <Ionicons name="md-menu" size={45} color="black" onPress={() => navigation.toggleDrawer()} />
+            <Ionicons name="md-menu" size={50} color="black" onPress={() => navigation.toggleDrawer()} />
         )      
 
     }

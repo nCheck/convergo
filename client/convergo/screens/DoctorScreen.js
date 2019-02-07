@@ -40,7 +40,7 @@ export default class DoctorScreen extends Component{
 
             <List>
             <ListItem itemDivider>
-              <Text>Completed Fundraiser</Text>
+              <Text>Doctor Visit History</Text>
             </ListItem>                    
             
             <ScrollView horizontal={true}>
@@ -69,7 +69,7 @@ export default class DoctorScreen extends Component{
 
 
             <ListItem itemDivider>
-              <Text> Completed Fundraiser </Text>
+              <Text> Upcoming Doctor Visits </Text>
             </ListItem>  
             <ListItem>
               <Text>Bradley Horowitz</Text>

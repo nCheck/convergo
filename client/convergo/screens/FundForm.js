@@ -70,7 +70,8 @@ export default class FundForm extends Component{
             });
             if (action !== DatePickerAndroid.dismissedAction) {
 
-                this.setState( { chosenDate : (new Date(year, month, day)).toDateString() } )
+                var date = new Date(year, month, day)
+                this.setState( { chosenDate : date.toDateString()  } )
               
             }
           } catch ({code, message}) {
@@ -162,7 +163,7 @@ export default class FundForm extends Component{
             onPress={ this.setDate }
             style={styles.button}
             >
-                <Text> { this.state.chosenDate.toDateString() } </Text>
+                <Text> { this.state.chosenDate } </Text>
             </Button>
 
             <Button style={styles.button}

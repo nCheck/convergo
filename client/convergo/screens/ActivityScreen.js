@@ -40,7 +40,7 @@ export default class ActivityScreen extends Component{
 
             <List>
             <ListItem itemDivider>
-              <Text>Completed Fundraiser</Text>
+              <Text>Completed Activity</Text>
             </ListItem>                    
             
             <ScrollView horizontal={true}>
@@ -69,11 +69,32 @@ export default class ActivityScreen extends Component{
 
 
             <ListItem itemDivider>
-              <Text> Upcoming Fundraiser </Text>
+              <Text> Upcoming Activity </Text>
             </ListItem>  
-            <ListItem>
-              <Text>Bradley Horowitz</Text>
-            </ListItem>
+
+            <ScrollView horizontal={true}>
+          <View>
+            <Table borderStyle={{borderColor: '#B1C0B9'}}>
+              <Row data={state.tableHead} widthArr={state.widthArr} style={styles.header} textStyle={styles.text}/>
+            </Table>
+            <ScrollView style={styles.dataWrapper}>
+              <Table borderStyle={{borderColor: '#B1C0B9'}}>
+                {
+                    _.zip(...state.tableData).map((rowData, index) => (
+                    <Row
+                      key={index}
+                      data={rowData}
+                      widthArr={state.widthArr}
+                      style={[styles.row, index%2 && {backgroundColor: '#F7F6E7'}]}
+                      textStyle={styles.text}
+                    />
+                  ))
+                }
+              </Table>
+            </ScrollView>
+          </View>
+        </ScrollView>
+
           </List>
 
 

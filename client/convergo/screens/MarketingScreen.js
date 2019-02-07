@@ -19,13 +19,7 @@ export default class MarketingScreen extends Component{
 
             <Content>
 
-            <Card>
-            <Text>This is Marketing page</Text>
-           </Card>
 
-           <Card>
-           <Text>This is Marketing page</Text>
-           </Card>
 
 
             </Content>

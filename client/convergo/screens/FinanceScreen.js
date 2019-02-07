@@ -20,13 +20,6 @@ export default class FinanceScreen extends Component{
             <Content>
 
 
-            <Card>
-            <Text>This is Finance page</Text>
-           </Card>
-
-           <Card>
-           <Text>This is Finance page</Text>
-           </Card>
 
 
 
