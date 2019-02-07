@@ -6,18 +6,18 @@ import { StyleSheet, ScrollView, View } from 'react-native'
 
 import { Table, TableWrapper, Row } from 'react-native-table-component';
 
-export default class FundraiserScreen extends Component{
+export default class DoctorScreen extends Component{
 
     constructor(props) {
         super(props);
         this.state = {
-          tableHead: ['No.', 'Title', 'Venue', 'Date'],
+          tableHead: ['No.', 'Doctor', 'Venue', 'Date'],
           widthArr: [80, 100, 120, 100 ] ,
           tableData: [
-            ['1', '2', '3'],
-            ['Blood Camp', 'Beach Cleaning', 'Self Defense'],
-            ['Dharavi', 'Agnel', 'Dharavi'],
-            ['06th Jan', '08th Jan', '26th Jan']
+            ['1', '2', '3', '4'],
+            ['Nehal', 'Shreya', 'Suyas', 'Nehal'],
+            ['Dharavi', 'Agnel', 'Dharavi', 'Bhiwandi'],
+            ['06th Jan', '08th Jan', '26th Jan', '06th Feb']
           ]
         }
       }
@@ -69,7 +69,7 @@ export default class FundraiserScreen extends Component{
 
 
             <ListItem itemDivider>
-              <Text> Upcoming Fundraiser </Text>
+              <Text> Completed Fundraiser </Text>
             </ListItem>  
             <ListItem>
               <Text>Bradley Horowitz</Text>
@@ -82,9 +82,9 @@ export default class FundraiserScreen extends Component{
             <Footer>
 
             <Button full
-            onPress={ () => this.props.navigation.navigate('FundForm') }
+            onPress={ () => this.props.navigation.navigate('DoctorForm') }
             >
-              <Text> Add Fundraiser </Text>
+              <Text> Schedule Doctor </Text>
             </Button>
 
             </Footer>

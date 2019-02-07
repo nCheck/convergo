@@ -13,6 +13,8 @@ import ActivityScreen from './screens/ActivityScreen'
 import SideBar from './screens/SideBar'
 import FundraiserScreen from './screens/Fundraiser'
 import FundForm from './screens/FundForm';
+import DoctorScreen from './screens/DoctorScreen';
+import DoctorForm from './screens/DoctorForm';
 
 
 const AdminDrawer = createDrawerNavigator({
@@ -43,6 +45,20 @@ const FinanceDrawer = createDrawerNavigator({
 }
 );
 
+const MarketingDrawer = createDrawerNavigator({
+  Marketing: {
+    screen: MarketingScreen,
+  },
+  Doctor : { screen : DoctorScreen },
+  Activity : { screen : ActivityScreen },
+} , {
+  contentComponent :  props => <SideBar routes={ ["Doctor", "Activity"] } {...props} /> ,
+  contentOptions : {
+    activeTintColor : 'red'
+  }
+}
+);
+
 
 
 const MainCon = createStackNavigator(
@@ -50,13 +66,15 @@ const MainCon = createStackNavigator(
   {
     Home : { screen : HomeScreen },
     Admin : { screen : AdminDrawer },
-    Marketing : { screen : MarketingScreen },
+    Marketing : { screen : MarketingDrawer },
     Finance : { screen : FinanceDrawer } ,
     Setting : { screen : SettingScreen } ,
     Activity : { screen : ActivityScreen },
     Fundraiser : { screen : FundraiserScreen },
     Activity : { screen : ActivityScreen },
-    FundForm : { screen : FundForm }
+    FundForm : { screen : FundForm },
+    Doctor : { screen : DoctorScreen },
+    DoctorForm : { screen : DoctorForm }
   },
   {
     initialRouteName : 'Home',
@@ -64,7 +82,7 @@ const MainCon = createStackNavigator(
 
       return {
         headerLeft:(
-            <Ionicons name="md-menu" size={32} color="black" onPress={() => navigation.toggleDrawer()} />
+            <Ionicons name="md-menu" size={45} color="black" onPress={() => navigation.toggleDrawer()} />
         )      
 
     }

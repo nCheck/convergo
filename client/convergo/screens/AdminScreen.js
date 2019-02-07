@@ -23,17 +23,11 @@ export default class AdminScreen extends Component{
 
 
             <Card>
-            <Button bordered full
-             onPress={ ()=> this.props.navigation.navigate( 'Marketing' ) } >
-            <Text>Primary</Text>
-            </Button>
+            <Text>This is admin page</Text>
            </Card>
 
            <Card>
-            <Button bordered full
-             onPress={ ()=> this.props.navigation.navigate( 'Finance' ) } >
-            <Text>Primary</Text>
-            </Button>
+           <Text>This is admin page</Text>
            </Card>
 
 

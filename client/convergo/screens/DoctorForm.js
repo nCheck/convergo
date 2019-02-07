@@ -45,7 +45,7 @@ const options = {
 
 
 
-export default class FundForm extends Component{
+export default class DoctorForm extends Component{
 
 
     constructor(props) {
@@ -55,12 +55,7 @@ export default class FundForm extends Component{
         this.setDate = this.setDate.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleChange = this.handleChange.bind(this);
-        this._pickImage = this._pickImage.bind(this);
       }
-
-    static navigationOptions = {
-        header: null,
-      };
 
     async setDate () {
         try {
@@ -70,7 +65,8 @@ export default class FundForm extends Component{
             });
             if (action !== DatePickerAndroid.dismissedAction) {
 
-                this.setState( { chosenDate : (new Date(year, month, day)).toDateString() } )
+                this.setState( { chosenDate : new Date(year, month, day) } )
+              console.log( this.state.chosenDate.toDateString() )
               
             }
           } catch ({code, message}) {
@@ -86,58 +82,52 @@ export default class FundForm extends Component{
     async handleSubmit() {
         const date = this.state.chosenDate
         const value = this._form.getValue();
-        var imageName = this.state.imageData.split('/').pop(-1)
-        var image = {
-            uri : this.state.imageData,
-            type : 'image/jpeg' ,
-            name : imageName
-        }
-        const body = { ...value , date : date , image : image}
+        const body = { ...value , date : date}
 
         var formData  = new FormData();
 
         for(var name in body) {
-            formData.append (name, body[name]);
+            formData.append(name, body[name]);
         }
 
         console.log(formData)
         const url = IP + '/dummy'
 
+        try{
+            // await fetch(url, {
+            //     mode:'cors',
+            //     method: 'POST',
+            //     body: formData,
+            //   }).then((response) => response.json())
+            //       .then((responseJson) => {
+            //         console.log(responseJson);
+            //       })
+            //       .catch((error) => {
+            //         console.error(error);
+            //       });
+            let xhr = new XMLHttpRequest();
+            xhr.open('POST', url);
+
+            await xhr.send(formData);
 
 
-        axios({
-            method: 'post',
-            url: url,
-            data: formData,
-            config: { headers: {'Content-Type': 'multipart/form-data' }}
-            })
-            .then(function (response) {
-                //handle success
-                console.log(response);
-            })
-            .catch(function (response) {
-                //handle error
-                console.log(response);
-            });
+
+        }catch (err){
+            console.log(err)
+
+        }
+
+        console.log("no error")
         
 
     }
 
-    _pickImage = async () => {
-        console.log("hello")
-        let result = await ImagePicker.launchImageLibraryAsync({
-          allowsEditing: true,
-          aspect: [4, 3],
-        });
 
-    
-        if (!result.cancelled) {
-          this.setState({ imageData: result.uri });
-        }
+
+
+    static navigationOptions = {
+        header: null,
       };
-
-
-
 
 
     render () {
@@ -165,18 +155,6 @@ export default class FundForm extends Component{
                 <Text> { this.state.chosenDate.toDateString() } </Text>
             </Button>
 
-            <Button style={styles.button}
-             onPress={this._pickImage}
-             block success full
-            >
-
-            <Text> Pick Banner Image </Text>
-            </Button>
-
-            { this.state.imageData == '' ?
-             <Text style={{height: 20, flex: 1, justifyContent : 'center', marginLeft: 100}} >No Image Selected</Text> :
-             <Image source={{uri: this.state.imageData}} style={{height: 200, width: null, flex: 1}} /> 
-             }
 
             </View>
             

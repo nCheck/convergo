@@ -15,6 +15,7 @@
     "react": "16.5.0",
     "react-bootstrap-date-picker": "^5.1.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-table-component": "^1.2.0",
     "react-navigation": "^3.1.4",
     "simple-date-picker": "^0.1.1",
     "tcomb-form-native": "^0.6.20"

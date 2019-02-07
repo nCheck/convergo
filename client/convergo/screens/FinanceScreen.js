@@ -21,25 +21,11 @@ export default class FinanceScreen extends Component{
 
 
             <Card>
-            <Button bordered full
-             onPress={ ()=> this.props.navigation.navigate( 'Admin' ) } >
-            <Text>Administrator</Text>
-            </Button>
-           </Card>
-
-
-           <Card>
-            <Button bordered full
-             onPress={ ()=> this.props.navigation.navigate( 'Marketing' ) } >
-            <Text>Marketing</Text>
-            </Button>
+            <Text>This is Finance page</Text>
            </Card>
 
            <Card>
-            <Button bordered full
-             onPress={ ()=> this.props.navigation.navigate( 'Finance' ) } >
-            <Text>Finance</Text>
-            </Button>
+           <Text>This is Finance page</Text>
            </Card>
 
 

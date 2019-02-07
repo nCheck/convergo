@@ -20,23 +20,11 @@ export default class MarketingScreen extends Component{
             <Content>
 
             <Card>
-            <CardItem>
-              <Icon active name="logo-facebook" />
-              <Text>Administrator</Text>
-              <Right>
-                <Icon name="arrow-forward" onPress={ ()=> this.props.navigation.navigate( 'Activity' ) } />
-              </Right>
-             </CardItem>
+            <Text>This is Marketing page</Text>
            </Card>
 
            <Card>
-            <CardItem>
-              <Icon active name="logo-facebook" />
-              <Text>Marketing</Text>
-              <Right>
-                <Icon name="arrow-forward" onPress={ ()=> this.props.navigation.navigate( 'Fundraiser' ) } />
-              </Right>
-             </CardItem>
+           <Text>This is Marketing page</Text>
            </Card>
 
 
