@@ -16,15 +16,17 @@ import FundForm from './screens/FundForm';
 import DoctorScreen from './screens/DoctorScreen';
 import DoctorForm from './screens/DoctorForm';
 import ActivityForm from './screens/ActivityForm';
+import StudentInfoScreen from './screens/StudentInfoScreen';
 
 
 const AdminDrawer = createDrawerNavigator({
   Admin: {
     screen: AdminScreen,
   },
-  Marketing : { screen : MarketingScreen }
+  Marketing : { screen : MarketingScreen },
+  StudentInfo : { screen : StudentInfoScreen }
 } , {
-  contentComponent :  props => <SideBar routes={ ["Marketing", "Admin"] } {...props}/> ,
+  contentComponent :  props => <SideBar routes={ ["Marketing", "Admin", 'StudentInfo'] } {...props}/> ,
   contentOptions : {
     activeTintColor : 'red'
   }
@@ -76,7 +78,8 @@ const MainCon = createStackNavigator(
     FundForm : { screen : FundForm },
     Doctor : { screen : DoctorScreen },
     DoctorForm : { screen : DoctorForm },
-    ActivityForm : { screen : ActivityForm }
+    ActivityForm : { screen : ActivityForm },
+    StudentInfo : { screen : StudentInfoScreen }
   },
   {
     initialRouteName : 'Home',
