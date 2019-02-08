@@ -163,7 +163,7 @@ export default class FundForm extends Component{
             onPress={ this.setDate }
             style={styles.button}
             >
-                <Text> { this.state.chosenDate } </Text>
+                <Text> { this.state.chosenDate.toString()  } </Text>
             </Button>
 
             <Button style={styles.button}

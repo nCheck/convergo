@@ -16,7 +16,7 @@ import Address from '../constants/Address';
 const fund = t.struct({
     causeTitle: t.String,
     description: t.String,
-    amount: t.Number
+    doctorMail: t.String
   });
 
 const Form = t.form.Form;

@@ -26,7 +26,7 @@ const AdminDrawer = createDrawerNavigator({
   Marketing : { screen : MarketingScreen },
   StudentInfo : { screen : StudentInfoScreen }
 } , {
-  contentComponent :  props => <SideBar routes={ ["Marketing", "Admin", 'StudentInfo'] } {...props}/> ,
+  contentComponent :  props => <SideBar routes={ ["Admin", 'StudentInfo'] } {...props}/> ,
   contentOptions : {
     activeTintColor : 'red'
   }
